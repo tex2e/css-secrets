@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CSS Secrets</title>
+  </head>
+  <body>
+    <h1>CSS Secrets</h1>
+
+    <h2>Translucent borders</h2>
+    <iframe src="01.html" width="60%" height="400px"></iframe>
+    <pre><code class="html01"></code></pre>
+
+    <h2>Multiple borders</h2>
+    <iframe src="02.html" width="60%" height="400px"></iframe>
+    <pre><code class="html02"></code></pre>
+
+    <h2>Flexible background-position</h2>
+    <iframe src="03.html" width="60%" height="400px"></iframe>
+    <pre><code class="html03"></code></pre>
+
+    <h2>Inner rounding</h2>
+    <iframe src="04.html" width="60%" height="400px"></iframe>
+    <pre><code class="html04"></code></pre>
+
+    <h2>Stripy backgrounds</h2>
+    <iframe src="05.html" width="60%" height="400px"></iframe>
+    <pre><code class="html05"></code></pre>
+
+    <h2>Complex patterns</h2>
+    <iframe src="06.html" width="60%" height="400px"></iframe>
+    <pre><code class="html06"></code></pre>
+
+    <h2>Random backgrounds</h2>
+    <iframe src="07.html" width="60%" height="400px"></iframe>
+    <pre><code class="html07"></code></pre>
+
+    <h2>Image borders</h2>
+    <iframe src="08.html" width="60%" height="400px"></iframe>
+    <pre><code class="html08"></code></pre>
+
+    <h2>Flexible ellipses</h2>
+    <iframe src="09.html" width="60%" height="400px"></iframe>
+    <pre><code class="html09"></code></pre>
+
+    <h2>Parallelograms</h2>
+    <iframe src="10.html" width="60%" height="400px"></iframe>
+    <pre><code class="html10"></code></pre>
+
+    <h2>Parallelograms</h2>
+    <iframe src="11.html" width="60%" height="400px"></iframe>
+    <pre><code class="html11"></code></pre>
+
+    <h2>Cutout corners</h2>
+    <iframe src="12.html" width="60%" height="400px"></iframe>
+    <pre><code class="html12"></code></pre>
+
+    <h2>Trapezoid tabs</h2>
+    <iframe src="13.html" width="60%" height="400px"></iframe>
+    <pre><code class="html13"></code></pre>
+
+    <h2>Simple pie charts</h2>
+    <iframe src="14.html" width="60%" height="400px"></iframe>
+    <pre><code class="html14"></code></pre>
+
+    <h2>One sided shadows</h2>
+    <iframe src="15.html" width="60%" height="400px"></iframe>
+    <pre><code class="html15"></code></pre>
+
+    <h2>Irregular drop shadows</h2>
+    <iframe src="16.html" width="60%" height="400px"></iframe>
+    <pre><code class="html16"></code></pre>
+
+    <h2>Color tinting</h2>
+    <iframe src="17.html" width="60%" height="400px"></iframe>
+    <pre><code class="html17"></code></pre>
+
+    <h2>Frosted glass</h2>
+    <iframe src="18.html" width="60%" height="400px"></iframe>
+    <pre><code class="html18"></code></pre>
+
+    <h2>Folded corner</h2>
+    <iframe src="19.html" width="60%" height="400px"></iframe>
+    <pre><code class="html19"></code></pre>
+
+    <h2>Hyphens</h2>
+    <iframe src="20.html" width="60%" height="400px"></iframe>
+    <pre><code class="html20"></code></pre>
+
+    <h2>Inserted line breaks</h2>
+    <iframe src="21.html" width="60%" height="400px"></iframe>
+    <pre><code class="html21"></code></pre>
+
+    <h2>Inserted line breaks</h2>
+    <iframe src="22.html" width="60%" height="400px"></iframe>
+    <pre><code class="html22"></code></pre>
+
+    <h2>Adjusting tab width</h2>
+    <iframe src="23.html" width="60%" height="400px"></iframe>
+    <pre><code class="html23"></code></pre>
+
+    <h2>Ligatures</h2>
+    <iframe src="24.html" width="60%" height="400px"></iframe>
+    <pre><code class="html24"></code></pre>
+
+    <h2>Ligatures</h2>
+    <iframe src="25.html" width="60%" height="400px"></iframe>
+    <pre><code class="html25"></code></pre>
+
+    <script type="text/javascript">
+    function httpGetAsync(url, callback) {
+      var xmlHttp = new XMLHttpRequest();
+      xmlHttp.onreadystatechange = function() {
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+          callback(xmlHttp.responseText);
+      }
+      xmlHttp.open("GET", url, true); // true for asynchronous
+      xmlHttp.send(null);
+    }
+
+    for (var i = 1; i <= 25; i++) {
+      // html file name: 01.html .. 25.html
+      // html inject selector: .html01 .. .html25
+      var htmlFile = ((i < 10) ? '0' : '') + i + '.html';
+      var htmlInjectSelector = '.html' + ((i < 10) ? '0' : '') + i;
+      httpGetAsync(htmlFile, function (text) {
+        var dom = document.querySelector(this.htmlInjectSelector);
+        dom.textContent = text;
+      }.bind({htmlInjectSelector: htmlInjectSelector}));
+    }
+    </script>
+  </body>
+</html>
